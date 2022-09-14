@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-header">
+
+        <p>
+            <div id="clock"></div>
+        </p>
+
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">Participant information sheet {{student_id}}</h5>
+        <p class="card-text">
+            Dear participant,<br>
+            Thank you for taking time to participate in this study.
+            We are working on a project about automatic grading of free text answers. 
+            To this end, we wish to collect data regarding students answering questions in online assessments.
+            If you are the age of 18 or above, fluent in English, and have some experience marking at university level, you are invited to participate in this study.
+            <br>Do note the following:
+            <ol>
+                <li>Your participation in this study is voluntary. We will only include you in the study if you give us consent to do so.</li>
+                <li>You can discontinue with the survey at any point without adverse consequences.</li>
+                <li>No personal questions or identifying particulars will be asked.</li>
+                <li>This survey will be dealt with confidentially.</li>
+                <li>The original survey will be stored in a secure location, in a secure database for a period of five years after which it will be destroyed.</li>
+                <li>Electronic datasets will be completely anonymised and stored for an indefinite period on a password protected computer.</li>
+                <li>Only the researchers involved in the project will have access to the raw data.</li>
+                <li>The dataset may possibly be utilised in future research, the same confidentiality will be applied in that instance.</li>
+                <li>If you have any concerns or questions related to the study in general, or the items in the questionnaire, please contact the project leader, <strong>Mr. Siyabonga Mhlongo at siyabongam@uj.ac.za, +27 11 559 1177.</strong></li>
+            </ol>
+            <br>
+            Regards,<br>
+            Mr. Siyabonga Mhlongo (Project Leader)<br>
+            <strong>siyabongam@uj.ac.za</strong><br>
+            Dr. Tebogo Bokaba (Co-supervisor)<br>
+            <strong>tbokaba@uj.ac.za</strong><br>
+            Mr. Malia Sekokotoana (Researcher)
+            <strong>216059089@student.uj.ac.za</strong>
+
+        </p>
+
+        <a href="{% url 'marker_consent' %}" class="btn btn-success">Next</a>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

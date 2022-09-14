@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+    
+    <div class="card-header">
+
+        <p>
+            <div id="clock"></div>
+        </p>
+
+    </div>
+
+    <div class="card-body">
+
+        {% if message %}
+                
+            <h4 class="card-text">{{message}}</h4>
+
+        {% else %}
+            <p class="card-text">Please read the passages and answer the questions that follow them.</p>
+
+            <form method="POST" action="{%url 'assessment_end' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for question in questions %}
+                <br>
+                <strong>Context:</strong>
+                <p><em>{{question.context}}</em></p>
+                <strong>Question:</strong>
+                <p>{{question.question}}</p>
+                <label for="answer" class="form-label"><strong>Answer:</strong></label>
+                <textarea name="answers[]" required class="form-control" rows="3"></textarea>
+                <br>
+                <br>
+                <hr>  
+            {% endfor %}
+            <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        {% endif %}
+
+    </div>
+    
+
+</div>
+
+{% endblock %}

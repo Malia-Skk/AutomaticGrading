@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+    
+    <div class="card-header">
+
+        <p>
+            <div id="clock"></div>
+        </p>
+
+    </div>
+
+    <div class="card-body">
+
+        {% if message %}
+        <p class="card-text"><h5>{{message}}</h5></p>
+        {% else %}
+        <p class="card-text"><h5>Thank you for completing the survey.</h5></p>
+        {% endif %}
+        
+        <br>
+        
+    </div>
+    
+
+</div>
+
+
+
+{% endblock %}

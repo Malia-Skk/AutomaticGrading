@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-header">
+
+        <p>
+            <div id="clock"></div>
+        </p>
+
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">Consent</h5>
+        <p class="card-text">
+            I have been asked to participate in the above study. I have been informed about my involvement in the research, and what is required of me.<br>
+            I understand that:
+            <ol>
+                <li>My participation in the research study is voluntary;</li>
+                <li>My answers will not be used if I do not provide consent;</li>
+                <li>I may withdraw from the research at any time with no negative consequences for myself;</li>
+                <li>My answers will be kept confidential and the anonymised data will be safely stored on password protected computers;</li>
+                <li>The data and results may be used for journal publications and/or conference presentations;</li>
+                <li>The raw survey data will be stored in a secure location on the University of Johannesburg campus for a period of five years after which it will be destroyed;</li>
+                <li>The data may also be used in related studies in future;</li>
+                <li>Other researchers may have access to the data but my name will not appear on any of the data base that is sent to other researchers;</li>
+                <li>I will not receive any reports on individual results, but I can request feedback on the overall findings of the study;</li>
+                <li>I can contact the researchers, whose details have been provided above, if I have any uncertainties or concerns that relate to the study and/or the items in the questionnaire;</li>
+                <li>I have received the contact details of the researchers on the participant information sheet;</li>
+                <li>All my questions about the research have been answered and I agree that my responses from the questionnaires can be used for the research;</li>
+                <li>I have read the abovementioned information and agree to participate as per the above conditions. I understand everything and consent voluntarily to participate in this study.</li>
+            </ol>
+        </p>
+        <form>
+                <p>By clicking <strong>"Begin"</strong> you consent to participate in this study as stated above.</p>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="termsCheckBox2">
+                    <label class="form-check-label" for="terms_and_conditions">
+                        I am 18 years and above.
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="termsCheckBox1">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                    I have some experience in marking.
+                    </label>
+                </div>
+
+            
+            <a href="{% url 'marking' %}" class="btn btn-success">Begin</a>
+            <a class="btn btn-warning" id="begin"  href="#" onclick="javascript:window.close();opener.window.focus();">Exit</a>
+        </form>
+
+            
+    </div>
+
+</div>
+
+
+
+{% endblock %}

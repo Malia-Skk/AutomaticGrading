@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-header">
+        <div id="clock"></div>
+    </div>
+
+    <div class="card-body">
+
+        <h6>
+            Please provide a score for each of the answers below, and grade based on the reference answer and rubric.
+        </h6>
+
+        <p class="card-text"><strong>General rubric:</strong></p>
+        <br>
+
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Score</th>
+                <th scope="col">5</th>
+                <th scope="col">4</th>
+                <th scope="col">3</th>
+                <th scope="col">2</th>
+                <th scope="col">1</th>
+                <th scope="col">0</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Comprehension of text</th>
+                <td>Shows a thorough and thoughtful understanding of the text.</td>
+                <td>Shows a comprehensive understanding of the text.</td>
+                <td>Shows a basic understanding of the text.</td>
+                <td>Shows a limited understanding of the text.</td>
+                <td>No understanding of text.</td>
+                <td>No answer.</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+</div>
+<br>
+{% for student in students %}
+<div class="card">
+
+    <div class="card-header">
+        <p class="card-header">Student: {{forloop.counter}}/3</p>
+    </div>
+
+    <div class="card-body">
+
+    </div>
+</div>
+<br><br>
+{% endfor %}
+
+
+{% endblock %}
